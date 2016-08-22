@@ -458,7 +458,8 @@ static void terminateDetection(void)
 {
     u_int32_t i;
 
-    ndpi_exit_detection_module(ndpi_struct, free_wrapper);
+    //ndpi_exit_detection_module(ndpi_struct, free_wrapper);
+    ndpi_exit_detection_module(ndpi_struct);
 
     for (i = 0; i < MAX_OSDPI_IDS; i++) {
         free(osdpi_ids[i].ndpi_id);
