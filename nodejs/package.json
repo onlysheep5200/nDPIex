@@ -4,6 +4,7 @@
   "author": "lmangani",
   "dependencies": {
     "ffi": "*",
+    "node-cache": "^3.2.1",
     "pcap": "git+https://github.com/mranney/node_pcap.git",
     "pcap-parser": "*",
     "ref": "*",

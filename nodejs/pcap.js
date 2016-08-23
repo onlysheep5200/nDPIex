@@ -16,9 +16,21 @@ var pcap = require("pcap"),
 
 var CONF = JSON.parse(fs.readFileSync("./config.json","r+"));
 
-var BaseClass = require('./client');
+var BaseClient = require('./client').BaseClient;
+
+class MyClient extends BaseClient{
+    handleStringMessage(msg){
+        try{
+            var message = JSON.parse(msg);
+            //TODO:do some message
+        }catch (e){
+            console.log(e.toString());
+        }
+    }
+}
 
 
+var client = new MyClient(CONF['serverAddr']);
 var IPv4 = require('pcap/decode/ipv4');
 var TCP = require('pcap/decode/tcp');
 var UDP = require('pcap/decode/udp');
