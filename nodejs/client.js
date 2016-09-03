@@ -1,3 +1,4 @@
+"use strict"
 /**
  * Created by yaodong.hyd on 2016/8/23.
  */

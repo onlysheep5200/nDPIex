@@ -1,3 +1,4 @@
+"use strict"
 /*  nDPI Node.js Binding PoC 	*/
 /*  (c) 2015 QXIP BV 		*/
 /*  http://qxip.net 		*/
@@ -14,7 +15,8 @@ var fs = require('fs');
 var pcap = require("pcap"),
     pcap_session = pcap.createSession("", "");
 
-var CONF = JSON.parse(fs.readFileSync("./config.json","r+"));
+//var CONF = JSON.parse(fs.readFileSync("./config.json","r+"));
+var CONF = {};
 
 var BaseClient = require('./client').BaseClient;
 
@@ -30,7 +32,8 @@ class MyClient extends BaseClient{
 }
 
 
-var client = new MyClient(CONF['serverAddr']);
+//var client = new MyClient(CONF['serverAddr']);
+var client = null;
 var IPv4 = require('pcap/decode/ipv4');
 var TCP = require('pcap/decode/tcp');
 var UDP = require('pcap/decode/udp');
