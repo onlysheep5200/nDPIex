@@ -167,6 +167,11 @@ function getFlowInfo(packet,l7_protocol){
 	}
 }
 
+
+function onPacketAnalyzedCallback(flow_info){
+  console.log("flow from "+flow_info.saddr+":"+sport+" to "+flow_info.daddr+":"+dport+" with protocol : "+flow_info.l7_protocol);
+}
+
 function ndpiPipe(h,p,callback){
 	(function(header,packet){
 		ndpi.addProtocolHandler(function(id,p){
