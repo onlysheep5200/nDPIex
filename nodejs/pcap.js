@@ -161,6 +161,8 @@ function getFlowInfo(packet,l7_protocol){
 			dport = tsl_packet.dport;
 		}else{
 			tsl_protocol = 'unknown';
+			sport = '21232';
+			dport = '54211';
 		}
 		return {l7_protocol,tsl_protocol,saddr,daddr,sport,dport};
 	
@@ -169,7 +171,7 @@ function getFlowInfo(packet,l7_protocol){
 
 
 function onPacketAnalyzedCallback(flow_info){
-  console.log("flow from "+flow_info.saddr+":"+sport+" to "+flow_info.daddr+":"+dport+" with protocol : "+flow_info.l7_protocol);
+  console.log("flow from "+flow_info.saddr+":"+flow_info.sport+" to "+flow_info.daddr+":"+flow_info.dport+" with protocol : "+flow_info.l7_protocol);
 }
 
 function ndpiPipe(h,p,callback){
